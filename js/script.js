@@ -23,19 +23,35 @@ function humanPlay() {
   return usersInput    
 }
 
-console.log("AI:", computerPlay())  
-console.log("human", humanPlay()) 
-
 /*
+"Both players choose the same shape, the game is tied" //if { playerSelection == computerSelection }
+
+  "You Win! Rock crushes scissors"  //playerSelection = "rock" &  computerSelection = "scissors"
+  "You Lose! Rock crushes scissors" //playerSelection = "scissors" &  computerSelection = "rock"
+  "You Win! Paper covers rock"      //playerSelection = "paper" &  computerSelection = "rock"
+  "You Lose! Paper covers rock"     //playerSelection = "rock" &  computerSelection = "paper"
+  "You Win! Scissors cuts paper"    //playerSelection = "scissors" &  computerSelection = "paper"
+  "You Lose! Scissors cuts paper"   //playerSelection = "paper" &  computerSelection = "scissors"
+  */
+
+// a function that plays a single round of Rock Paper Scissors. The function should take two parameters 
+// playerSelection and computerSelection - and then return a string that declares the winner of the round
+// using ternary operator and 9 cases, first 3 equals cases, and than you could win or loose by choosing every 
+// one of 3 cases (6 more) 
+
 function playRound(playerSelection, computerSelection) {
-  // your code here!
-  "You Lose! Paper beats Rock"
-  "You Lose! Scissors beats Paper"
-  "You Lose! Rock beats Scissors"
-  
+  return playerSelection == computerSelection ? "Both players choose the same shape, the game is tied"
+         : playerSelection == "rock" &&  computerSelection == "scissors" ? "You Win! Rock crushes scissors"
+         : playerSelection == "scissors" &&  computerSelection == "rock" ? "You Lose! Rock crushes scissors"
+         : playerSelection == "paper" &&  computerSelection == "rock" ? "You Win! Paper covers rock"
+         : playerSelection == "rock" &&  computerSelection == "paper" ? "You Lose! Paper covers rock" 
+         : playerSelection == "scissors" &&  computerSelection == "paper" ? "You Win! Scissors cuts paper" 
+         : "You Lose! Scissors cuts paper";  
 }
 
-const playerSelection = "rock";
+const playerSelection = humanPlay();
 const computerSelection = computerPlay();
+ 
+console.log("human", playerSelection); 
+console.log("AI:", computerSelection); 
 console.log(playRound(playerSelection, computerSelection));
-*/
