@@ -39,6 +39,7 @@ function humanPlay() {
 // using ternary operator and 9 cases, first 3 equals cases, and than you could win or loose by choosing every 
 // one of 3 cases (6 more) 
 
+
 function playRound(playerSelection, computerSelection) {
   return playerSelection == computerSelection ? "Both players choose the same shape, the game is tied"
          : playerSelection == "rock" &&  computerSelection == "scissors" ? "You Win! Rock crushes scissors"
@@ -49,9 +50,28 @@ function playRound(playerSelection, computerSelection) {
          : "You Lose! Scissors cuts paper";  
 }
 
-const playerSelection = humanPlay();
-const computerSelection = computerPlay();
- 
-console.log("human", playerSelection); 
-console.log("AI:", computerSelection); 
-console.log(playRound(playerSelection, computerSelection));
+let playerSelection;
+let computerSelection;
+
+//console.log("human", playerSelection); 
+//console.log("AI:", computerSelection); 
+//console.log(playRound(playerSelection, computerSelection));
+
+
+// a function game(). 
+// use the playRound() function inside of this one to play a 5 round game 
+// that keeps score and reports a winner or loser at the end.
+//you should be using console.log() to display the results of each round 
+//and the winner at the end.
+//a function game() 
+
+function game() {
+  for (let round = 1; round <= 5 ; round++) {
+    playerSelection = humanPlay();
+    computerSelection = computerPlay();
+    let oneRoundGame = playRound(playerSelection, computerSelection);
+    console.log(`round # ${round}: Human = ${playerSelection} & AI = ${computerSelection} | ${oneRoundGame} |`);   
+  }
+}
+
+game();
