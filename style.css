@@ -1,30 +1,73 @@
-/* google fonts:
-font-family: 'Cabin Sketch', cursive;
+/* google fonts (400):
+font-family: 'Amatic SC', cursive;  +700
+font-family: 'Bangers', cursive;
+font-family: 'Barriecito', cursive;
+font-family: 'Cabin Sketch', cursive;  +700
 font-family: 'DotGothic16', sans-serif;
 font-family: 'Fredericka the Great', cursive;
+font-family: 'Frijole', cursive;
+font-family: 'Londrina Sketch', cursive;
+font-family: 'Love Ya Like A Sister', cursive;
 font-family: 'Monoton', cursive;
 font-family: 'Press Start 2P', cursive;
+font-family: 'Quantico', sans-serif;  +700
+font-family: 'Rye', cursive;
+font-family: 'Shadows Into Light', cursive;
+font-family: 'Shadows Into Light Two', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Train One', cursive;
+font-family: 'UnifrakturMaguntia', cursive;
+font-family: 'VT323', monospace;
 */
 
 /* color palet:
-#184d47    dark green
-#96bb7c    light green
-#fad586    light yellow
+#184d47    darkgreen
+#96bb7c    lightgreen
+#fad586    lightyellow
 #c64756    redish
 */
 
 body {
   background-color: #fad586;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Shadows Into Light Two', cursive;
   color: #184d47;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  background-color: #184d47;
+  justify-content: center;
 }
 
 h1 {
   font-size: 4rem;
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 700;
+  color: #fad586;
 }
 
 h2 {
   font-size: 2rem;
+}
+
+.score {
+  display: flex;
+}
+
+.player, .computer {
+  display: inline-flex;
+  width: 45%;
+  border: 1px solid red;
+  justify-content: center;
+}
+
+.vs {
+  display: inline-flex;
+  width: 10%;
+  border: 1px solid red;
+  justify-content: center;
 }
 
 .btn {
