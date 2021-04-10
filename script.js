@@ -48,6 +48,11 @@ function playRound(playerSelection, computerSelection) {
     "You Lose! Scissors cuts paper";
 }
 
+function playRoundNew(playerSelection, computerSelection) {
+  return playerSelection === computerSelection ? "Draw" :
+    ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")) ? "You Win!" :
+    "You Lose!";
+}
 
 
 
@@ -99,5 +104,6 @@ for (let i = 0; i < 3; i++) {
     document.getElementById("imageOfYourChoice").src = "roundImages/" + playerSelection + "Human.png";
     document.getElementById("imageOfComputerChoice").src = "roundImages/" + computerSelection + "Robot.png";
     document.getElementById("additionSection").style.display = "flex";
+    console.log(playRoundNew(playerSelection, computerSelection));
   });
 }
