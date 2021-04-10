@@ -1,0 +1,66 @@
+/* google fonts:
+font-family: 'Cabin Sketch', cursive;
+font-family: 'DotGothic16', sans-serif;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Monoton', cursive;
+font-family: 'Press Start 2P', cursive;
+*/
+
+/* color palet:
+#184d47    dark green
+#96bb7c    light green
+#fad586    light yellow
+#c64756    redish
+*/
+
+body {
+  background-color: #fad586;
+  font-family: 'Press Start 2P', cursive;
+  color: #184d47;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.btn {
+  height: 7rem;
+  width: 7rem;
+  background-size: 100%;
+  border: none;
+  border-radius: 50%;
+  padding: 1rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 1rem;
+  margin: 1rem 1rem;
+}
+
+.btn {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.btn:focus {
+  outline: none;  /*get rid of a squer border while pressing*/
+}
+
+#humanRock {
+  background-image: url("roundImages/humanRock.png");
+}
+
+#humanPaper {
+  background-image: url("roundImages/humanPaper.png");
+}
+
+#humanScissors {
+  background-image: url("roundImages/humanScissors.png");
+}
