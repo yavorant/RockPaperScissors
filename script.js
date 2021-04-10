@@ -84,14 +84,20 @@ with the correct playerSelection every time a button is clicked. (you can keep t
 4) Add a div for displaying results and change all of your console.logs into DOM methods.
 5) Display the running score, and announce a winner of the game once one player reaches 5 points.
 */
-let computerSelection;
-var playerSelection = "hello";
+
 
 for (let i = 0; i < 3; i++) {
+  let playerSelection = "";
+  //let playerPoints = 0;
+  //let robotPoints = 0;
   document.querySelectorAll(".btn")[i].addEventListener("click", function() {
-    console.log(this.id);
-    //console.log(playerSelection);
+    document.getElementById("mainSection").style.display = "none";
+    playerSelection = this.id;
+    console.log("playerSelection: ", playerSelection);
+    let computerSelection = computerPlay();
+    console.log("computerSelection: ", computerSelection);
+    document.getElementById("imageOfYourChoice").src = "roundImages/" + playerSelection + "Human.png";
+    document.getElementById("imageOfComputerChoice").src = "roundImages/" + computerSelection + "Robot.png";
+    document.getElementById("additionSection").style.display = "flex";
   });
 }
-
-console.log(playerSelection);

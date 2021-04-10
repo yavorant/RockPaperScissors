@@ -72,7 +72,11 @@ h1 {
   display: flex;
 }
 
-.makeAChoice, .computersChoice {
+.additionSection {
+  display: none;
+}
+
+.makeAChoice, .computersChoice, .yourChoice {
   display: inline-flex;
   width: 50%;
   border: 1px solid red;
@@ -103,15 +107,15 @@ h1 {
 }
 
 #rock {
-  background-image: url("roundImages/humanRock.png");
+  background-image: url("roundImages/rockHuman.png");
 }
 
 #paper {
-  background-image: url("roundImages/humanPaper.png");
+  background-image: url("roundImages/paperHuman.png");
 }
 
 #scissors {
-  background-image: url("roundImages/humanScissors.png");
+  background-image: url("roundImages/scissorsHuman.png");
 }
 
 .imageOfComputerChoice, .imageOfYourChoice {
@@ -119,9 +123,5 @@ h1 {
   border-radius: 50%;
   width: 20rem;
   height: 20rem;
-  margin: auto;
-}
-
-.computersChoice {
-
+  margin: 4rem;
 }
