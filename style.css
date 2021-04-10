@@ -42,18 +42,16 @@ header {
 }
 
 h1 {
-  font-size: 4rem;
   font-family: 'Cabin Sketch', cursive;
+  font-size: 4rem;
   font-weight: 700;
   color: #fad586;
 }
 
-h2 {
-  font-size: 2rem;
-}
-
 .score {
   display: flex;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 2rem;
 }
 
 .player, .computer {
@@ -70,6 +68,17 @@ h2 {
   justify-content: center;
 }
 
+.mainSection {
+  display: flex;
+}
+
+.makeAChoice, .computersChoice {
+  display: inline-flex;
+  width: 50%;
+  border: 1px solid red;
+  justify-content: center;
+}
+
 .btn {
   height: 7rem;
   width: 7rem;
@@ -82,9 +91,6 @@ h2 {
   display: block;
   font-size: 1rem;
   margin: 1rem 1rem;
-}
-
-.btn {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
@@ -96,14 +102,26 @@ h2 {
   outline: none;  /*get rid of a squer border while pressing*/
 }
 
-#humanRock {
+#rock {
   background-image: url("roundImages/humanRock.png");
 }
 
-#humanPaper {
+#paper {
   background-image: url("roundImages/humanPaper.png");
 }
 
-#humanScissors {
+#scissors {
   background-image: url("roundImages/humanScissors.png");
+}
+
+.imageOfComputerChoice, .imageOfYourChoice {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 50%;
+  width: 20rem;
+  height: 20rem;
+  margin: auto;
+}
+
+.computersChoice {
+
 }

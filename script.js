@@ -1,15 +1,13 @@
-
-
 //function getRandomInt(int) { return Math.floor(Math.random() * Math.floor(int)); } // Return random int from 0 to int
 //function computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’
 
 function computerPlay() {
-    const computerChoiceList = ["rock", "paper", "scissors"];
-    return computerChoiceList[Math.floor(Math.random() * 3)]
-  }
+  const computerChoiceList = ["rock", "paper", "scissors"];
+  return computerChoiceList[Math.floor(Math.random() * 3)]
+}
 
 //function humanPlay that will takes a case-insensitive input from an user's prompt
-
+/*
 function humanPlay() {
   //The toLowerCase() method returns the calling string value converted to lower case
   let usersInput = "";
@@ -22,7 +20,7 @@ function humanPlay() {
   }
   return usersInput
 }
-
+*/
 /*
 "Both players choose the same shape, the game is tied" //if { playerSelection == computerSelection }
 
@@ -41,17 +39,17 @@ function humanPlay() {
 
 
 function playRound(playerSelection, computerSelection) {
-  return playerSelection == computerSelection ? "Both players choose the same shape, the game is tied"
-         : playerSelection == "rock" &&  computerSelection == "scissors" ? "You Win! Rock crushes scissors"
-         : playerSelection == "scissors" &&  computerSelection == "rock" ? "You Lose! Rock crushes scissors"
-         : playerSelection == "paper" &&  computerSelection == "rock" ? "You Win! Paper covers rock"
-         : playerSelection == "rock" &&  computerSelection == "paper" ? "You Lose! Paper covers rock"
-         : playerSelection == "scissors" &&  computerSelection == "paper" ? "You Win! Scissors cuts paper"
-         : "You Lose! Scissors cuts paper";
+  return playerSelection == computerSelection ? "Both players choose the same shape, the game is tied" :
+    playerSelection == "rock" && computerSelection == "scissors" ? "You Win! Rock crushes scissors" :
+    playerSelection == "scissors" && computerSelection == "rock" ? "You Lose! Rock crushes scissors" :
+    playerSelection == "paper" && computerSelection == "rock" ? "You Win! Paper covers rock" :
+    playerSelection == "rock" && computerSelection == "paper" ? "You Lose! Paper covers rock" :
+    playerSelection == "scissors" && computerSelection == "paper" ? "You Win! Scissors cuts paper" :
+    "You Lose! Scissors cuts paper";
 }
 
-let playerSelection;
-let computerSelection;
+
+
 
 //console.log("human", playerSelection);
 //console.log("AI:", computerSelection);
@@ -66,8 +64,8 @@ let computerSelection;
 //a function game()
 
 function game() {
-  for (let round = 1; round <= 5 ; round++) {
-    playerSelection = humanPlay();
+  for (let round = 1; round <= 5; round++) {
+    //playerSelection = humanPlay();
     computerSelection = computerPlay();
     let oneRoundGame = playRound(playerSelection, computerSelection);
     console.log(`round # ${round}: Human = ${playerSelection} & AI = ${computerSelection} | ${oneRoundGame} |`);
@@ -86,3 +84,14 @@ with the correct playerSelection every time a button is clicked. (you can keep t
 4) Add a div for displaying results and change all of your console.logs into DOM methods.
 5) Display the running score, and announce a winner of the game once one player reaches 5 points.
 */
+let computerSelection;
+var playerSelection = "hello";
+
+for (let i = 0; i < 3; i++) {
+  document.querySelectorAll(".btn")[i].addEventListener("click", function() {
+    console.log(this.id);
+    //console.log(playerSelection);
+  });
+}
+
+console.log(playerSelection);

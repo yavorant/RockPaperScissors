@@ -21,8 +21,9 @@
 
 
   <div class="score">
+
     <div class="player">
-      <h2>Player 3</h2>
+      <h2>Player: 0</h2>
     </div>
 
     <div class="vs">
@@ -30,26 +31,33 @@
     </div>
 
     <div class="computer">
-      <h2>Computer 2</h2>
+      <h2>Computer: 0</h2>
     </div>
+
   </div>
 
 
 
-  <div>
-    <div>
-      <h3>make a choice</h3>
+  <div class="mainSection">
+
+    <div class="makeAChoice" id="makeAChoice">
       <div>
-        <button id="humanRock" class="btn" type="button"></button>
-        <button id="humanPaper" class="btn" type="button"></button>
-        <button id="humanScissors" class="btn" type="button"></button>
+        <h3>make a choice</h3>
+        <button id="rock" class="btn" type="button"></button>
+        <button id="paper" class="btn" type="button"></button>
+        <button id="scissors" class="btn" type="button"></button>
       </div>
-
     </div>
-    <div></div>
+
+    <div class="computersChoice">
+      <img class="imageOfComputerChoice" src="roundImages/robotRock.png" alt="Image of robot with rock">
+    </div>
+
   </div>
 
-  <img src="roundImages/humanRock.png" alt="">
+  <div class="yourChoice">
+    <img class="imageOfYourChoice" src="roundImages/humanRock.png" alt="">
+  </div>
 
   <script src="script.js"></script>
 </body>
