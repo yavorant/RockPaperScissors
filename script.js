@@ -117,6 +117,16 @@ let robotPoints = 0;
       }
       console.log("playerPoints: ", playerPoints);
       console.log("robotPoints: ", robotPoints);
+      window.setTimeout(function(){
+              document.getElementById("mainSection").style.display = "flex";
+              document.getElementById("additionSection").style.display = "none";
+          },2000);    
     });
 
   }
+
+/*   delay
+  window.setTimeout(function(){
+          object.style.display = 'none';
+      },1000);
+*/
