@@ -94,46 +94,41 @@ let playerPoints = 0;
 let robotPoints = 0;
 
 
-  for (let i = 0; i < 3; i++) {
-    let playerSelection = "";
+for (let i = 0; i < 3; i++) {
+  let playerSelection = "";
 
-    document.querySelectorAll(".btn")[i].addEventListener("click", function() {
+  document.querySelectorAll(".btn")[i].addEventListener("click", function() {
+    document.getElementById("mainSection").style.display = "none";
+    playerSelection = this.id;
+    let computerSelection = computerPlay();
+    document.getElementById("imageOfYourChoice").src = "roundImages/" + playerSelection + "Human.png";
+    document.getElementById("imageOfComputerChoice").src = "roundImages/" + computerSelection + "Robot.png";
+    document.getElementById("additionSection").style.display = "flex";
+    let roundResult = playRoundNew(playerSelection, computerSelection);
+    if (roundResult === "win") {
+      playerPoints = playerPoints + 1;
+      document.getElementById("playerScore").innerText = `Player: ${playerPoints}`;
+    } else if (roundResult === "lose") {
+      robotPoints = robotPoints + 1;
+      document.getElementById("robotScore").innerText = `Robot: ${robotPoints}`;
+    }
+    window.setTimeout(function() {
+      document.getElementById("mainSection").style.display = "flex";
+      document.getElementById("additionSection").style.display = "none";
+    }, 1000);
+    if (playerPoints === 5) {
       document.getElementById("mainSection").style.display = "none";
-      playerSelection = this.id;
-      console.log("playerSelection: ", playerSelection);
-      let computerSelection = computerPlay();
-      console.log("computerSelection: ", computerSelection);
-      document.getElementById("imageOfYourChoice").src = "roundImages/" + playerSelection + "Human.png";
-      document.getElementById("imageOfComputerChoice").src = "roundImages/" + computerSelection + "Robot.png";
-      document.getElementById("additionSection").style.display = "flex";
-      let roundResult = playRoundNew(playerSelection, computerSelection);
-      console.log(roundResult);
-      if (roundResult === "win") {
-        playerPoints = playerPoints + 1;
-        document.getElementById("playerScore").innerText = `Player: ${playerPoints}`;
-      } else if (roundResult === "lose") {
-        robotPoints = robotPoints + 1;
-        document.getElementById("robotScore").innerText = `Robot: ${robotPoints}`;
-      }
-      console.log("playerPoints: ", playerPoints);
-      console.log("robotPoints: ", robotPoints);
-      window.setTimeout(function(){
-              document.getElementById("mainSection").style.display = "flex";
-              document.getElementById("additionSection").style.display = "none";
-          },1000);
-      if (playerPoints === 5) {
-          document.getElementById("mainSection").style.display = "none";
-          document.getElementById("additionSection").style.display = "none";
-          document.getElementById("resultText").innerText = "You win!";
-          document.getElementById("resultSection").style.display = "flex";
-          setTimeout(() => window.location.reload(), 1000);
-      } else if (robotPoints === 5) {
-          document.getElementById("mainSection").style.display = "none";
-          document.getElementById("additionSection").style.display = "none";
-          document.getElementById("resultText").innerText = "Robot wins!";
-          document.getElementById("resultSection").style.display = "flex";
-          setTimeout(() => window.location.reload(), 1000);
-      }
-    });
+      document.getElementById("additionSection").style.display = "none";
+      document.getElementById("resultText").innerText = "You win!";
+      document.getElementById("resultSection").style.display = "flex";
+      setTimeout(() => window.location.reload(), 1000);
+    } else if (robotPoints === 5) {
+      document.getElementById("mainSection").style.display = "none";
+      document.getElementById("additionSection").style.display = "none";
+      document.getElementById("resultText").innerText = "Robot wins!";
+      document.getElementById("resultSection").style.display = "flex";
+      setTimeout(() => window.location.reload(), 1000);
+    }
+  });
 
-  }
+}
