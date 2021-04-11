@@ -49,9 +49,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function playRoundNew(playerSelection, computerSelection) {
-  return playerSelection === computerSelection ? "Draw" :
-    ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")) ? "You Win!" :
-    "You Lose!";
+  return playerSelection === computerSelection ? "draw" :
+    ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")) ? "win" :
+    "lose";
 }
 
 
@@ -90,20 +90,33 @@ with the correct playerSelection every time a button is clicked. (you can keep t
 5) Display the running score, and announce a winner of the game once one player reaches 5 points.
 */
 
+let playerPoints = 0;
+let robotPoints = 0;
 
-for (let i = 0; i < 3; i++) {
-  let playerSelection = "";
-  //let playerPoints = 0;
-  //let robotPoints = 0;
-  document.querySelectorAll(".btn")[i].addEventListener("click", function() {
-    document.getElementById("mainSection").style.display = "none";
-    playerSelection = this.id;
-    console.log("playerSelection: ", playerSelection);
-    let computerSelection = computerPlay();
-    console.log("computerSelection: ", computerSelection);
-    document.getElementById("imageOfYourChoice").src = "roundImages/" + playerSelection + "Human.png";
-    document.getElementById("imageOfComputerChoice").src = "roundImages/" + computerSelection + "Robot.png";
-    document.getElementById("additionSection").style.display = "flex";
-    console.log(playRoundNew(playerSelection, computerSelection));
-  });
-}
+
+  for (let i = 0; i < 3; i++) {
+    let playerSelection = "";
+
+    document.querySelectorAll(".btn")[i].addEventListener("click", function() {
+      document.getElementById("mainSection").style.display = "none";
+      playerSelection = this.id;
+      console.log("playerSelection: ", playerSelection);
+      let computerSelection = computerPlay();
+      console.log("computerSelection: ", computerSelection);
+      document.getElementById("imageOfYourChoice").src = "roundImages/" + playerSelection + "Human.png";
+      document.getElementById("imageOfComputerChoice").src = "roundImages/" + computerSelection + "Robot.png";
+      document.getElementById("additionSection").style.display = "flex";
+      let roundResult = playRoundNew(playerSelection, computerSelection);
+      console.log(roundResult);
+      if (roundResult === "win") {
+        playerPoints = playerPoints + 1;
+        document.getElementById("playerScore").innerText = `Player: ${playerPoints}`;
+      } else if (roundResult === "lose") {
+        robotPoints = robotPoints + 1;
+        document.getElementById("robotScore").innerText = `Robot: ${robotPoints}`;
+      }
+      console.log("playerPoints: ", playerPoints);
+      console.log("robotPoints: ", robotPoints);
+    });
+
+  }
