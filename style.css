@@ -74,6 +74,12 @@ h1 {
   display: none;
 }
 
+.resultSection {
+  display: none;
+  justify-content: center;
+  font-size: 6rem;
+}
+
 .makeAChoice, .computersChoice, .yourChoice {
   display: inline-flex;
   width: 50%;

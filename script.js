@@ -120,13 +120,20 @@ let robotPoints = 0;
       window.setTimeout(function(){
               document.getElementById("mainSection").style.display = "flex";
               document.getElementById("additionSection").style.display = "none";
-          },2000);    
+          },1000);
+      if (playerPoints === 5) {
+          document.getElementById("mainSection").style.display = "none";
+          document.getElementById("additionSection").style.display = "none";
+          document.getElementById("resultText").innerText = "You win!";
+          document.getElementById("resultSection").style.display = "flex";
+          setTimeout(() => window.location.reload(), 1000);
+      } else if (robotPoints === 5) {
+          document.getElementById("mainSection").style.display = "none";
+          document.getElementById("additionSection").style.display = "none";
+          document.getElementById("resultText").innerText = "Robot wins!";
+          document.getElementById("resultSection").style.display = "flex";
+          setTimeout(() => window.location.reload(), 1000);
+      }
     });
 
   }
-
-/*   delay
-  window.setTimeout(function(){
-          object.style.display = 'none';
-      },1000);
-*/
